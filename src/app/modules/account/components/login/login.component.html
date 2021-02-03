@@ -1,0 +1,42 @@
+<section [ngClass]="['content', 'content-full', 'content-center']">
+    <div [ngClass]="'wrap-md'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12'">
+                <h1>TRANSIT INFRINGEMENTS</h1>
+            </div>
+        </div>
+        <form method="POST" [formGroup]="form" (ngSubmit)="login()">
+            <div [ngClass]="'row'">
+                <div [ngClass]="'col-12'">
+                    <div [ngClass]="['form-field-icon']">
+                        <fa-icon [icon]="faUser" [ngClass]="['fa-lg', 'grey-dark-2']"></fa-icon>
+                        <input [ngClass]="'input-image'" type="email" placeholder="E-mail" formControlName="user">
+                        <small *ngIf="validateEmpty('user')">Required Field</small>
+                    </div>                   
+                </div>
+                <div [ngClass]="'col-12'">
+                    <div [ngClass]="'form-field-icon'">
+                        <fa-icon [icon]="faLock" [ngClass]="['fa-lg', 'grey-dark-2']"></fa-icon>
+                        <input [ngClass]="'input-image'" type="password" placeholder="Password" formControlName="password">
+                        <small *ngIf="validateEmpty('password')">Required Field</small>
+                    </div>                   
+                </div>
+            </div>
+            <div [ngClass]="['row', 'mt-3', 'mb-5']">
+                <div [ngClass]="['col-xl6','col-l6', 'col-m6', 'col-s12']">
+                    <button [ngClass]="['btn', 'btn-primary']" type="submit">Login</button>
+                </div>
+                <div [ngClass]="['col-xl6','col-l6', 'col-m6', 'col-s12']">
+                    <button [ngClass]="['btn', 'btn-secundary']" 
+                            type="button"
+                            (click)="showSingUp()">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<footer *ngIf="messageVisible">
+    <app-message [messageType]="messageType" [messageContent]="messageContent"></app-message>
+</footer>

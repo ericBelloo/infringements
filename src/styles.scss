@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/colors';
+@import './assets/containers';
+@import './assets/fonts';
+@import './assets/margins';
+@import './assets/widgets';
+@import './assets/wraps';
+@import './assets/text';
+@import './assets/message';
+
+body { background-color: $grey-lighten-5; }

@@ -1,0 +1,13 @@
+
+<div [ngClass]="'message'">
+    <ng-container *ngIf="messageContent=='error'; else elseTemplate">        
+        <div [ngClass]="'message-error'">            
+            <span>{{ messageContent }}</span>            
+        </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <div [ngClass]="'message-success'">
+            <span>{{ messageContent }}</span>
+        </div>        
+    </ng-template>    
+</div>

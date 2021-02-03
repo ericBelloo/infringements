@@ -1,0 +1,79 @@
+
+<section [ngClass]="['content', 'content-full', 'content-center']">
+    <div [ngClass]="'wrap-md'">
+        <div [ngClass]="'row'">
+            <div [ngClass]="'col-12'">
+                <h1>TRANSIT INFRINGEMENTS</h1>
+            </div>
+        </div>
+        <form method="POST" [formGroup]="form" (ngSubmit)="signUp()">
+            <div [ngClass]="'row'">
+                <div [ngClass]="'col-12'">                                         
+                    <div [ngClass]="'form-field'">
+                        <input type="email" 
+                               placeholder="E-mail" 
+                               formControlName="user">
+                        <small *ngIf="validateEmpty('user')">Required Field</small> 
+                    </div>                                           
+                </div>
+                <div [ngClass]="'row'">
+                    <div [ngClass]="['col-6']">                        
+                        <div [ngClass]="'form-field'">
+                            <input  type="text" 
+                                    placeholder="Name" 
+                                    formControlName="name">
+                            <small *ngIf="validateEmpty('name')">Required Field</small> 
+                        </div>                                                   
+                    </div>
+                    <div [ngClass]="['col-6']"> 
+                        <div [ngClass]="'form-field'">
+                            <input type="text" 
+                                   placeholder="Last Name" 
+                                   formControlName="last_name">
+                            <small *ngIf="validateEmpty('name')">Required Field</small>
+                        </div>                                                    
+                    </div>
+                </div>
+                <div [ngClass]="'col-12'">                  
+                    <div [ngClass]="'form-field'">
+                        <input type="password" 
+                               placeholder="Password" 
+                               formControlName="password">
+                        <small *ngIf="validateEmpty('password')">Required Field</small> 
+                    </div>                                          
+                </div>
+                <div [ngClass]="'col-12'">              
+                    <div [ngClass]="'form-field'">
+                        <input type="password" 
+                               placeholder="Password Repeat" 
+                               formControlName="password_repeat">
+                        <small *ngIf="validateEmpty('password_repeat')">Required Field</small>    
+                    </div>                                              
+                </div>
+                <div [ngClass]="'col-12'">              
+                    <div [ngClass]="'form-field'">
+                        <input type="text" 
+                               placeholder="Police Number" 
+                               formControlName="police_number">
+                        <small *ngIf="validateEmpty('password_repeat')">Required Field</small>    
+                    </div>                                              
+                </div>                
+            </div>
+            <div [ngClass]="['row', 'mt-3', 'mb-5']">
+                <div [ngClass]="['col-xl6','col-l6', 'col-m6', 'col-s12']">
+                    <button [ngClass]="['btn', 'btn-primary']" 
+                            type="submit"
+                            (click)="showLogin()">
+                        Login
+                    </button>
+                </div>
+                <div [ngClass]="['col-xl6','col-l6', 'col-m6', 'col-s12']">
+                    <button [ngClass]="['btn', 'btn-secundary']" type="button">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<footer *ngIf="messageVisible">
+    <app-message [messageType]="messageType" [messageContent]="messageContent"></app-message>
+</footer>

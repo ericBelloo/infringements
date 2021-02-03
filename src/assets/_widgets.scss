@@ -1,0 +1,63 @@
+
+*:focus {
+    outline: none;
+}
+
+.btn{
+    width: 150px;
+    height: 35px;
+    margin: 10px;
+    border: 0px;
+    &-full{
+        width: 100% !important;
+    }
+    &-primary{        
+        background-color: $orange-dark-1;        
+        color: $white;
+        font-size: 10pt;
+        @media screen {
+            margin: 2px;
+            width: 90%;
+        }
+    }
+    &-secundary{
+        background-color: $grey-dark-3;
+        color: $white;
+        font-size: 10pt;
+        @media screen {
+            margin: 2px;
+            width: 90%;
+        }
+    }
+}
+
+
+.form-field{
+    @extend .content;
+    flex-wrap: wrap;
+    width: 100%;   
+    input{        
+        height: 35px;    
+        border-bottom: 1px solid $grey-lighten-1;    
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;     
+        color: $grey-dark-3;
+        font-size: 12pt;    
+        padding: 0px !important;             
+    }    
+    small{
+        width: 96%;
+        text-align: end;
+        @extend .text-invalid;
+    }
+    &-icon{
+        @extend .form-field;
+        fa-icon{
+            width: 8%;
+            padding-left: 2%;
+            @extend .content, .content-center;
+    
+        }  
+    }
+}
